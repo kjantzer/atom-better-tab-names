@@ -1,14 +1,14 @@
 {
-  "name": "tab-foldername-index",
+  "name": "better-tab-names",
   "main": "./lib/main",
   "version": "3.3.0",
-  "description": "Plugin replaces tab's title if opened index.* file for more readability",
+  "description": "Plugin replaces tab's title if opened index.* file for more readability. Forked from tab-foldername-index",
   "keywords": [
     "index",
     "tabs",
     "foldername"
   ],
-  "repository": "https://github.com/Connormiha/atom-tab-foldername-index",
+  "repository": "https://github.com/kjantzer/atom-better-tab-names",
   "license": "MIT",
   "engines": {
     "atom": ">=1.17.0"

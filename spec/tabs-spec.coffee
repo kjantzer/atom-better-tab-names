@@ -3,7 +3,7 @@ Tabs = require "../lib/main"
 pkg = require("../package.json").name
 mapNames = require("../lib/mapNames")
 
-describe "tab-foldername-index module", ->
+describe "better-tab-names module", ->
   pkgModule = null
   originalAtomViewsGetView = atom.views.getView
 

@@ -4,7 +4,7 @@
 // for a full listing of what's available.
 @import "ui-variables";
 
-.tab-foldername-index {
+.better-tab-names {
     line-height: 1;
     height: 100%;
     text-align: center;
@@ -18,7 +18,16 @@
         // Overwrite unecessary `:before` icon top positioning
         &::before {
             top: 0!important;
+
         }
+
+        &.medium-yellow::before {
+            color: #f1e05a
+        }
+    }
+
+    .icon {
+        &.php-icon::before { color: #9877bf; }
     }
 
     &__text-wrapper {
@@ -34,8 +43,8 @@
         width: 100%;
     }
 
-    &__file {
-        opacity: 0.4;
+    &__folder {
+        opacity: 0.6;
     }
 
     &__original {

@@ -30,10 +30,10 @@ createMochFileIconHTMLtab = ->
 
 $element = null
 
-describe "tab-foldername-index", ->
+describe "better-tab-names", ->
   beforeEach ->
-    atom.config.set('tab-foldername-index.equalsNamesEnabled', true)
-    atom.config.set('tab-foldername-index.numberOfFolders', 1)
+    atom.config.set('better-tab-names.equalsNamesEnabled', true)
+    atom.config.set('better-tab-names.numberOfFolders', 1)
 
   afterEach ->
     mapNames.clear()
@@ -86,7 +86,7 @@ describe "tab-foldername-index", ->
       expectExist $element2.querySelector ".#{pkg}", $element2.querySelector ".#{pkg}__original"
 
   it "shoundn't render invalid two equal filenames with equalsNamesEnabled=false", ->
-    atom.config.set('tab-foldername-index.equalsNamesEnabled', false)
+    atom.config.set('better-tab-names.equalsNamesEnabled', false)
     $element1 = createMochHTMLtab()
 
     tab1 = new Tab mochPaneInvalid, [$element1]
@@ -282,7 +282,7 @@ describe "tab-foldername-index", ->
       pane2.getTitle = -> "invalid1"
       pane2.getPath = -> "/Users/home/invalid1"
 
-      atom.config.set('tab-foldername-index.equalsNamesEnabled', false)
+      atom.config.set('better-tab-names.equalsNamesEnabled', false)
       callback2()
 
       waits 20
@@ -310,20 +310,20 @@ describe "tab-foldername-index", ->
     tab.setEnabled()
 
     expect(tab.$elements[0]).toBe $element
-    expect($element.querySelector(".tab-foldername-index__folder").textContent).toBe "work"
+    expect($element.querySelector(".better-tab-names__folder").textContent).toBe "work"
 
   it "should render two folder names", ->
-    atom.config.set('tab-foldername-index.numberOfFolders', 2)
+    atom.config.set('better-tab-names.numberOfFolders', 2)
     $element = createMochHTMLtab()
 
     tab = new Tab mochPaneValid, [$element]
     tab.setEnabled()
 
     expect(tab.$elements[0]).toBe $element
-    expect($element.querySelector(".tab-foldername-index__folder").textContent).toBe "Users/work"
+    expect($element.querySelector(".better-tab-names__folder").textContent).toBe "Users/work"
 
   it "should render many folder names", ->
-    atom.config.set('tab-foldername-index.numberOfFolders', 5)
+    atom.config.set('better-tab-names.numberOfFolders', 5)
     $element = createMochHTMLtab()
 
     mochPaneValidLangPath =
@@ -335,4 +335,4 @@ describe "tab-foldername-index", ->
     tab.setEnabled()
 
     expect(tab.$elements[0]).toBe $element
-    expect($element.querySelector(".tab-foldername-index__folder").textContent).toBe "folders2/folders3/folders4/folders5/folders6"
+    expect($element.querySelector(".better-tab-names__folder").textContent).toBe "folders2/folders3/folders4/folders5/folders6"

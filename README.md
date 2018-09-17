@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/Connormiha/atom-tab-foldername-index.svg?branch=master)](https://travis-ci.org/Connormiha/atom-tab-foldername-index)
+[![Build Status](https://travis-ci.org/Connormiha/atom-better-tab-names.svg?branch=master)](https://travis-ci.org/Connormiha/atom-better-tab-names)
 
-# tab-foldername-index package
+# better-tab-names package
 
 ![tab with index.* filename](https://cloud.githubusercontent.com/assets/4091305/15377903/32cc2c1e-1d70-11e6-8ffc-4d6f8e8fa67f.png)
 

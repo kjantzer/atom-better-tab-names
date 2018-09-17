@@ -11,12 +11,12 @@ checkHiddenOriginalTitle = (workspaceElement) ->
   expect(originalTitle.offsetWidth).toBe 0
 
 
-describe "Tab-foldername-index main", ->
+describe "better-tab-names main", ->
   workspaceElement = null
 
   beforeEach ->
-    atom.config.set('tab-foldername-index.equalsNamesEnabled', true)
-    atom.config.set('tab-foldername-index.numberOfFolders', 1)
+    atom.config.set('better-tab-names.equalsNamesEnabled', true)
+    atom.config.set('better-tab-names.numberOfFolders', 1)
     workspaceElement = atom.views.getView atom.workspace
     jasmine.attachToDOM workspaceElement
 
@@ -126,7 +126,7 @@ describe "Tab-foldername-index main", ->
     waits 20
 
     runs ->
-      atom.commands.dispatch workspaceElement, "tab-foldername-index:toggle"
+      atom.commands.dispatch workspaceElement, "better-tab-names:toggle"
       expectNotExist workspaceElement.querySelector ".#{pkg}",
         workspaceElement.querySelector ".#{pkg}__original"
 
@@ -136,7 +136,7 @@ describe "Tab-foldername-index main", ->
       .then ->
         atom.workspace.open "index.js"
       .then ->
-        atom.commands.dispatch workspaceElement, "tab-foldername-index:toggle"
+        atom.commands.dispatch workspaceElement, "better-tab-names:toggle"
         atom.packages.disablePackage pkg
       .then ->
         atom.packages.activatePackage pkg
@@ -151,13 +151,13 @@ describe "Tab-foldername-index main", ->
     waitsForPromise ->
       atom.packages.activatePackage pkg
       .then ->
-        atom.commands.dispatch workspaceElement, "tab-foldername-index:toggle"
+        atom.commands.dispatch workspaceElement, "better-tab-names:toggle"
         atom.workspace.open "index.js"
 
     waits 20
 
     runs ->
-      atom.commands.dispatch workspaceElement, "tab-foldername-index:toggle"
+      atom.commands.dispatch workspaceElement, "better-tab-names:toggle"
       expectExist workspaceElement.querySelector ".#{pkg}",
         workspaceElement.querySelector ".#{pkg}__original"
 
@@ -173,7 +173,7 @@ describe "Tab-foldername-index main", ->
       expect(folderBlock.offsetWidth).not.toBeGreaterThan workspaceElement.querySelector(".tab").offsetWidth
 
 
-describe "Tab-foldername-index main activated before tabs", ->
+describe "better-tab-names main activated before tabs", ->
   it "should render index.js when opened tabs plugin activated after #{pkg}", ->
     workspaceElement = atom.views.getView atom.workspace
 

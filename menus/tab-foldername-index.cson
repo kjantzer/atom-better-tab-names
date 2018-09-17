@@ -3,11 +3,11 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'tab-foldername-index'
+      'label': 'better-tab-names'
       'submenu': [
         {
           'label': 'Toggle'
-          'command': 'tab-foldername-index:toggle'
+          'command': 'better-tab-names:toggle'
         }
       ]
     ]
